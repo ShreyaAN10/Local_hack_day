@@ -18,7 +18,7 @@
       array_push($disease_percent,$disease_tuple['disease'],0);
     }
     foreach ($patient_symptoms as $s){
-        $check = mysqli_query($conn,"SELECT * FROM disease WHERE symptom LIKE '%{$s}%'");
+        $check = mysqli_query($conn,"SELECT * FROM disease WHERE symptoms LIKE '%{$s}%'");
         if ($check){
               while($row=mysqli_fetch_assoc($check)){
                 i = $row['disease'];
@@ -28,6 +28,5 @@
       }
       arsort($disease_percent);
       echo $disease_percent;
-
     ?>
   </body>
